@@ -1,0 +1,601 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>javaweb实验 | 流光</title><meta name="keywords" content="博客制作||个人经验"><meta name="author" content="流光"><meta name="copyright" content="流光"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="#body-wrap{     background: linear-gradient(to right bottom, rgb(0, 255, 240), rgb(92, 159, 247) 40%, rgb(211, 34, 255) 80%); }    在线考试管理系统&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在线考试管理系统是基于javawe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaweb实验">
+<meta property="og:url" content="https://zhangwudi-123.github.io/2021/06/02/Javaweb%E5%AE%9E%E9%AA%8C/index.html">
+<meta property="og:site_name" content="流光">
+<meta property="og:description" content="#body-wrap{     background: linear-gradient(to right bottom, rgb(0, 255, 240), rgb(92, 159, 247) 40%, rgb(211, 34, 255) 80%); }    在线考试管理系统&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在线考试管理系统是基于javawe">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/butterfly-docs-01-cover.png">
+<meta property="article:published_time" content="2021-06-02T11:22:08.000Z">
+<meta property="article:modified_time" content="2021-06-07T11:04:18.339Z">
+<meta property="article:author" content="流光">
+<meta property="article:tag" content="博客制作||个人经验">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/butterfly-docs-01-cover.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://zhangwudi-123.github.io/2021/06/02/Javaweb%E5%AE%9E%E9%AA%8C/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'javaweb实验',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-06-07 19:04:18'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="css/my.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/butterfly-docs-01-cover.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">流光</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">javaweb实验</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-06-02T11:22:08.000Z" title="发表于 2021-06-02 19:22:08">2021-06-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-06-07T11:04:18.339Z" title="更新于 2021-06-07 19:04:18">2021-06-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="javaweb实验"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><style>
+
+#body-wrap{
+    background: linear-gradient(to right bottom, rgb(0, 255, 240), rgb(92, 159, 247) 40%, rgb(211, 34, 255) 80%);
+}
+</style>
+
+
+<h1 id="在线考试管理系统"><a href="#在线考试管理系统" class="headerlink" title="在线考试管理系统"></a>在线考试管理系统</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在线考试管理系统是基于javaweb、tomcat和Mysql所做的在线考试管理系统，学生可以登录自己的账号查找自己的试题，对自己进行检测，教务或者老师也可以通过该系统查找年级学生的信息。</p>
+<h2 id="系统结构目录："><a href="#系统结构目录：" class="headerlink" title="系统结构目录："></a>系统结构目录：</h2><h4 id="1数据库创建"><a href="#1数据库创建" class="headerlink" title="1数据库创建"></a>1数据库创建</h4><h4 id="2基础类、Dao类和JDBC工具创建的创建"><a href="#2基础类、Dao类和JDBC工具创建的创建" class="headerlink" title="2基础类、Dao类和JDBC工具创建的创建"></a>2基础类、Dao类和JDBC工具创建的创建</h4><h4 id="3Servlet类的创建"><a href="#3Servlet类的创建" class="headerlink" title="3Servlet类的创建"></a>3Servlet类的创建</h4><h4 id="4监听器"><a href="#4监听器" class="headerlink" title="4监听器"></a>4监听器</h4><h4 id="5过滤器"><a href="#5过滤器" class="headerlink" title="5过滤器"></a>5过滤器</h4><h4 id="6前端页面展示"><a href="#6前端页面展示" class="headerlink" title="6前端页面展示"></a>6前端页面展示</h4><h2 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h2><h4 id="1数据库代码："><a href="#1数据库代码：" class="headerlink" title="1数据库代码："></a>1数据库代码：</h4><h5 id="（1）创建用户信息表"><a href="#（1）创建用户信息表" class="headerlink" title="（1）创建用户信息表"></a>（1）创建用户信息表</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Users(</span><br><span class="line"></span><br><span class="line">    userId <span class="type">int</span>  <span class="keyword">primary</span> key auto_increment, #用户编号</span><br><span class="line">    userName <span class="type">varchar</span>(<span class="number">50</span>),    #用户名称</span><br><span class="line">    password <span class="type">varchar</span>(<span class="number">50</span>),    #用户密码</span><br><span class="line">    sex      <span class="type">char</span>(<span class="number">1</span>),        #用户性别 <span class="string">&#x27;男&#x27;</span> 或则 <span class="string">&#x27;女&#x27;</span></span><br><span class="line">    email    <span class="type">varchar</span>(<span class="number">50</span>)     #用户邮箱</span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
+<pre><code>//auto_increment,自增序列i++在插入时，如果不给定具体用户编号，此时根据auto_increment的值递增添加
+</code></pre>
+<h5 id="（2）创建试题信息表"><a href="#（2）创建试题信息表" class="headerlink" title="（2）创建试题信息表"></a>（2）创建试题信息表</h5><pre><code> create table question(
+       questionId int primary key auto_increment,
+       title  varchar(50),# 10-8=?
+       optionA varchar(20),#A: 9
+       optionB varchar(20),#B: 1
+       optionC varchar(20),#C: 2
+       optionD varchar(20),#D: 0
+       answer  char(1)   
+
+     )
+     //每道题有4个选项  一个正确答案
+</code></pre>
+<hr>
+<h4 id="2数据库代码："><a href="#2数据库代码：" class="headerlink" title="2数据库代码："></a>2数据库代码：</h4><h5 id="（1）用户类："><a href="#（1）用户类：" class="headerlink" title="（1）用户类："></a>（1）用户类：</h5><pre><code>package com.bjpowernode.entity;//根据自己的目录引入
+
+public class Users &#123;
+   private Integer userId;
+   private String  userName;
+   private String  password;
+   private String  sex;
+   private String  email;
+
+public Integer getUserId() &#123;
+    return userId;
+&#125;
+
+public void setUserId(Integer userId) &#123;
+    this.userId = userId;
+&#125;
+
+public String getUserName() &#123;
+    return userName;
+&#125;
+
+public void setUserName(String userName) &#123;
+    this.userName = userName;
+&#125;
+
+public String getPassword() &#123;
+    return password;
+&#125;
+
+public void setPassword(String password) &#123;
+    this.password = password;
+&#125;
+
+public String getSex() &#123;
+    return sex;
+&#125;
+
+public void setSex(String sex) &#123;
+    this.sex = sex;
+&#125;
+
+public String getEmail() &#123;
+    return email;
+&#125;
+
+public void setEmail(String email) &#123;
+    this.email = email;
+&#125;
+
+public Users() &#123;
+&#125;
+
+public Users(Integer userId, String userName, String password, String sex, String email) &#123;
+    this.userId = userId;
+    this.userName = userName;
+    this.password = password;
+    this.sex = sex;
+    this.email = email;
+&#125;
+&#125;
+</code></pre>
+<h5 id="（2）试题类："><a href="#（2）试题类：" class="headerlink" title="（2）试题类："></a>（2）试题类：</h5><pre><code>package com.question;
+
+
+public class Question &#123;
+
+    private Integer questionId37;
+    private String title;
+    private String optionA;
+    private String optionB;
+    private String optionC;
+    private String optionD;
+    private String answer;
+
+public Integer getQuestionId() &#123;
+    return questionId;
+&#125;
+
+public void setQuestionId(Integer questionId) &#123;
+    this.questionId = questionId;
+&#125;
+
+public String getTitle() &#123;
+    return title;
+&#125;
+
+public void setTitle(String title) &#123;
+    this.title = title;
+&#125;
+
+public String getOptionA() &#123;
+    return optionA;
+&#125;
+
+public void setOptionA(String optionA) &#123;
+    this.optionA = optionA;
+&#125;
+
+public String getOptionB() &#123;
+    return optionB;
+&#125;
+
+public void setOptionB(String optionB) &#123;
+    this.optionB = optionB;
+&#125;
+
+public String getOptionC() &#123;
+    return optionC;
+&#125;
+
+public void setOptionC(String optionC) &#123;
+    this.optionC = optionC;
+&#125;
+
+public String getOptionD() &#123;
+    return optionD;
+&#125;
+
+public void setOptionD(String optionD) &#123;
+    this.optionD = optionD;
+&#125;
+
+public String getAnswer() &#123;
+    return answer;
+&#125;
+
+public void setAnswer(String answer) &#123;
+    this.answer = answer;
+&#125;
+
+public Question() &#123;
+&#125;
+
+public Question(Integer questionId, String title, String optionA, String optionB, String optionC, String optionD, String answer) &#123;
+    this.questionId = questionId;
+    this.title = title;
+    this.optionA = optionA;
+    this.optionB = optionB;
+    this.optionC = optionC;
+    this.optionD = optionD;
+    this.answer = answer;
+&#125;
+&#125;
+</code></pre>
+<h5 id="（3）JDBC工具类："><a href="#（3）JDBC工具类：" class="headerlink" title="（3）JDBC工具类："></a>（3）JDBC工具类：</h5><pre><code>package com.bjpowernode.util;
+
+
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import java.sql.*;
+import java.util.Iterator;
+import java.util.Map;
+
+// JdbcUtil obj = new JdbcUtil();  obj.getCon()
+// JdbcUtil obj = new JdbcUtil();  obj.createStatement();
+// JdbcUtil.getCon();
+public class JdbcUtil &#123;
+
+    final String URL=&quot;jdbc:mysql://localhost:3306/testweb&quot;;
+    final String USERNAME=&quot;root&quot;;
+    final String PASSWORD=&quot;55681446&quot;;
+    PreparedStatement ps= null;
+    Connection con = null;
+
+    //-------------通过全局作用域对象得到Connetion-----------start
+    public  Connection   getCon(HttpServletRequest request)&#123;
+
+        //1.通过请求对象，得到全局作用域对象
+        ServletContext application = request.getServletContext();
+        //2.从全局作用域对象得到map
+        Map map = (Map)application.getAttribute(&quot;key1&quot;);
+        //3.从map得到一个处于空闲状态Connection(拖鞋)
+        Iterator it =  map.keySet().iterator();
+        while(it.hasNext())&#123;
+            con = (Connection)  it.next();
+            boolean flag = (boolean)map.get(con);
+            if(flag == true)&#123;
+                map.put(con, false);
+                break;
+            &#125;
+        &#125;
+        return con;
+    &#125;
+
+    public  PreparedStatement createStatement(String sql,HttpServletRequest request)&#123;
+
+        try &#123;
+            ps =  getCon(request).prepareStatement(sql);
+        &#125; catch (SQLException e) &#123;
+            e.printStackTrace();
+        &#125;
+        return ps;
+    &#125;
+
+    public  void close(HttpServletRequest request)&#123;
+        if(ps!=null)&#123;
+            try &#123;
+                ps.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+
+        ServletContext application = request.getServletContext();
+        Map map =(Map)application.getAttribute(&quot;key1&quot;);
+        map.put(con, true);
+
+    &#125;
+    //-------------通过全局作用域对象得到Connetion-----------start
+
+    //将jar包中driver实现类加载到JVM中
+    static&#123;
+        try &#123;
+            Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+        &#125; catch (ClassNotFoundException e) &#123;
+            e.printStackTrace();
+        &#125;
+    &#125;
+
+    //封装连接通道创建细节
+    public  Connection   getCon()&#123;
+
+        try &#123;
+            con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        &#125; catch (SQLException e) &#123;
+            e.printStackTrace();
+        &#125;
+        return con;
+    &#125;
+
+    //封装交通工具创建细节
+    public  PreparedStatement createStatement(String sql)&#123;
+
+        try &#123;
+            ps =  getCon().prepareStatement(sql);
+        &#125; catch (SQLException e) &#123;
+            e.printStackTrace();
+        &#125;
+        return ps;
+    &#125;
+    // ps与con销毁细节 insert,update,delete
+    public  void close()&#123;
+        if(ps!=null)&#123;
+            try &#123;
+                ps.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+
+        if(con!=null)&#123;
+            try &#123;
+                con.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+
+    &#125;
+
+    //select ps,con,rs
+    public  void close(ResultSet rs)&#123;
+        if(rs!=null)&#123;
+            try &#123;
+                rs.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+        close();
+    &#125;
+&#125;
+</code></pre>
+<h5 id="（4）用户Dao类："><a href="#（4）用户Dao类：" class="headerlink" title="（4）用户Dao类："></a>（4）用户Dao类：</h5><pre><code>package com.bjpowernode.dao;
+
+import com.bjpowernode.entity.Users;
+import com.bjpowernode.util.JdbcUtil;
+
+import javax.servlet.http.HttpServletRequest;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class UserDao &#123;
+
+    private JdbcUtil util = new JdbcUtil();
+    //用户注册
+    //JDBC规范中，Connection创建与销毁最浪费时间
+    public int add(Users user)&#123;
+        String sql =&quot;insert into users(userName,password,sex,email)&quot; +
+                    &quot; values(?,?,?,?)&quot;;
+        PreparedStatement ps = util.createStatement(sql);
+        int result = 0;
+        try &#123;
+            ps.setString(1, user.getUserName());
+            ps.setString(2, user.getPassword());
+            ps.setString(3, user.getSex());
+            ps.setString(4, user.getEmail());
+            result = ps.executeUpdate();
+        &#125; catch (SQLException e) &#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            util.close();
+        &#125;
+        return result;
+    &#125;
+    public int add(Users user, HttpServletRequest request)&#123;
+        String sql =&quot;insert into users(userName,password,sex,email)&quot; +
+                &quot; values(?,?,?,?)&quot;;
+        PreparedStatement ps = util.createStatement(sql,request);
+        int result = 0;
+        try &#123;
+            ps.setString(1, user.getUserName());
+            ps.setString(2, user.getPassword());
+            ps.setString(3, user.getSex());
+            ps.setString(4, user.getEmail());
+            result = ps.executeUpdate();
+        &#125; catch (SQLException e) &#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            util.close(request);
+        &#125;
+        return result;
+    &#125;
+    //查询所有用户信息
+    public List findAll()&#123;
+        String sql =&quot;select * from users&quot;;
+        PreparedStatement ps = util.createStatement(sql);
+        ResultSet rs = null;
+        List userList = new ArrayList();
+        try &#123;
+            rs = ps.executeQuery();
+            while(rs.next())&#123;
+                Integer userId = rs.getInt(&quot;userId&quot;);
+                String  userName =rs.getString(&quot;userName&quot;);
+                String  password = rs.getString(&quot;password&quot;);
+                String  sex = rs.getString(&quot;sex&quot;);
+                String  email =rs.getString(&quot;email&quot;);
+                Users users = new Users(userId, userName, password, sex, email);
+                userList.add(users);
+            &#125;
+        &#125; catch (SQLException e) &#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            util.close(rs);
+        &#125;
+        return userList;
+    &#125;
+    //根据用户编号删除用户信息
+    public int delete(String userId)&#123;
+        String sql=&quot;delete from users where userId=?&quot;;
+        PreparedStatement ps = util.createStatement(sql);
+        int result = 0;
+        try &#123;
+            ps.setInt(1, Integer.valueOf(userId));
+            result = ps.executeUpdate();
+        &#125; catch (SQLException e) &#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            util.close();
+        &#125;
+        return result;
+    &#125;
+    //登录验证
+    public int login(String userName,String password)&#123;
+        String sql=&quot;select count(*) from users where userName=? and password=?&quot;;
+        PreparedStatement ps = util.createStatement(sql);
+        ResultSet rs = null;
+        int result = 0;
+        try &#123;
+            ps.setString(1, userName);
+            ps.setString(2, password);
+            rs = ps.executeQuery();
+            while(rs.next())&#123;
+            result =  rs.getInt(&quot;count(*)&quot;);
+            &#125;
+        &#125; catch (SQLException e) &#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            util.close(rs);
+        &#125;
+        return result;
+    &#125;
+&#125;
+</code></pre>
+<h5 id="（5）试题Dao类："><a href="#（5）试题Dao类：" class="headerlink" title="（5）试题Dao类："></a>（5）试题Dao类：</h5><pre><code>package com.dao;
+
+import com.Jdbc.JdbcUtil20194037张超;
+import com.question.Question;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Question &#123;
+    JdbcUtil util = new JdbcUtil();
+
+
+
+
+    public Question findBytitle(String questionId)&#123;
+        String sql=&quot;select * from question where title=?&quot;;
+        PreparedStatement ps = util.createStatement(sql);
+        ResultSet rs = null;
+        Question question=null;
+        try &#123;
+            //ps.setInt(1, Integer.valueOf(questionId));
+            rs = ps.executeQuery();
+            while(rs.next()) &#123;
+                Integer quesitonId = rs.getInt(&quot;questionId&quot;);
+                String title = rs.getString(&quot;title&quot;);
+                String optionA = rs.getString(&quot;optionA&quot;);
+                String optionB = rs.getString(&quot;optionB&quot;);
+                String optionC = rs.getString(&quot;optionC&quot;);
+                String optionD = rs.getString(&quot;optionD&quot;);
+                String answer = rs.getString(&quot;answer&quot;);
+                question = new Question(quesitonId, title, optionA, optionB, optionC, optionD, answer);
+            &#125;
+        &#125; catch (SQLException e) &#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            util.close(rs);
+        &#125;
+        return question;
+    &#125;
+
+
+&#125;
+</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">流光</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zhangwudi-123.github.io/2021/06/02/Javaweb%E5%AE%9E%E9%AA%8C/">https://zhangwudi-123.github.io/2021/06/02/Javaweb%E5%AE%9E%E9%AA%8C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zhangwudi-123.github.io" target="_blank">流光</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/butterfly-docs-01-cover.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/06/02/hello-world/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hello World</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">流光</div><div class="author-info__description">本站记录本人各种学习的旅途，用于巩固自我并启发后来人</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E8%80%83%E8%AF%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.</span> <span class="toc-text">在线考试管理系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%9B%AE%E5%BD%95%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">系统结构目录：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">1数据库创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E5%9F%BA%E7%A1%80%E7%B1%BB%E3%80%81Dao%E7%B1%BB%E5%92%8CJDBC%E5%B7%A5%E5%85%B7%E5%88%9B%E5%BB%BA%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">2基础类、Dao类和JDBC工具创建的创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3Servlet%E7%B1%BB%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">3Servlet类的创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E7%9B%91%E5%90%AC%E5%99%A8"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">4监听器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-number">1.1.0.5.</span> <span class="toc-text">5过滤器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA"><span class="toc-number">1.1.0.6.</span> <span class="toc-text">6前端页面展示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%B1%95%E7%A4%BA"><span class="toc-number">1.2.</span> <span class="toc-text">代码展示</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">1数据库代码：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E8%A1%A8"><span class="toc-number">1.2.0.1.1.</span> <span class="toc-text">（1）创建用户信息表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E5%88%9B%E5%BB%BA%E8%AF%95%E9%A2%98%E4%BF%A1%E6%81%AF%E8%A1%A8"><span class="toc-number">1.2.0.1.2.</span> <span class="toc-text">（2）创建试题信息表</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">2数据库代码：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E7%94%A8%E6%88%B7%E7%B1%BB%EF%BC%9A"><span class="toc-number">1.2.0.2.1.</span> <span class="toc-text">（1）用户类：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E8%AF%95%E9%A2%98%E7%B1%BB%EF%BC%9A"><span class="toc-number">1.2.0.2.2.</span> <span class="toc-text">（2）试题类：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%883%EF%BC%89JDBC%E5%B7%A5%E5%85%B7%E7%B1%BB%EF%BC%9A"><span class="toc-number">1.2.0.2.3.</span> <span class="toc-text">（3）JDBC工具类：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E7%94%A8%E6%88%B7Dao%E7%B1%BB%EF%BC%9A"><span class="toc-number">1.2.0.2.4.</span> <span class="toc-text">（4）用户Dao类：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%885%EF%BC%89%E8%AF%95%E9%A2%98Dao%E7%B1%BB%EF%BC%9A"><span class="toc-number">1.2.0.2.5.</span> <span class="toc-text">（5）试题Dao类：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/06/02/Javaweb%E5%AE%9E%E9%AA%8C/" title="javaweb实验"><img src="https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/butterfly-docs-01-cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="javaweb实验"/></a><div class="content"><a class="title" href="/2021/06/02/Javaweb%E5%AE%9E%E9%AA%8C/" title="javaweb实验">javaweb实验</a><time datetime="2021-06-02T11:22:08.000Z" title="发表于 2021-06-02 19:22:08">2021-06-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/02/hello-world/" title="Hello World"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2021/06/02/hello-world/" title="Hello World">Hello World</a><time datetime="2021-06-02T01:11:43.006Z" title="发表于 2021-06-02 09:11:43">2021-06-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 流光</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="000PeZCQ1i4XVs" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

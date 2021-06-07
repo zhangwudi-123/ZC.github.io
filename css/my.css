@@ -1,0 +1,41 @@
+/* 文章页背景 */
+#page-header{
+background-image: url('../img/my.jpg');
+}
+/* //改变背景色和透明度等 */
+.main-inner {
+	background: #fff;
+	padding: 25px;
+	opacity: 0.75;
+	border-radius: 10px;
+}
+/* 修改头部导航栏显示宽度，透明度，位置等 */
+#header {
+  padding: 5px 25px;
+	margin: 0 auto;
+	margin-top:15px;
+	width: 700px;
+	opacity: 0.8;
+	border-radius: 10px;
+
+}
+/* //修改底部展示信息显示宽度，透明度，位置等 */
+#footer {
+	padding: 5px 25px;
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: 5px;
+	width: 700px;
+	opacity: 0.8;
+	border-radius: 10px;
+}
+#body-wrap {
+  /* webkit内核 5.1 - 6.0 */
+  background: -webkit-linear-gradient(left, red, blue);
+  /* Opera 11.1 - 12.0 */
+  background: -o-linear-gradient(right, red, blue);
+  /* Firefox 3.6 - 15 */
+  background: -moz-linear-gradient(right, red, blue);
+  /* 标准的语法 */
+  background: linear-gradient(to right, red, blue);
+}

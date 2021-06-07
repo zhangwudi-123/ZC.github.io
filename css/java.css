@@ -1,0 +1,6 @@
+#body-wrap{
+    background: linear-gradient(to right bottom, rgb(0, 255, 240), rgb(92, 159, 247) 40%, rgb(211, 34, 255) 80%);
+}
+.layout_post>#post {
+    background: rgba(255,255,255,.1);
+}
